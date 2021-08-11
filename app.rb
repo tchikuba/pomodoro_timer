@@ -1,15 +1,15 @@
+# frozen_string_literal: true
+
 POMODORO_TIME = 25
 SHORT_BREAK_TIME = 5
 LONG_BREAK_TIME = 15
 SLEEP_TIME = ENV['DEBUG'].nil? ? 1 : 0.001
 
-arg = ARGV[0].to_i
-time = arg.zero? ? POMODORO_TIME : arg
-
 pomodoro_count = 0
 short_break_count = 0
 long_break_count = 0
 
+# タイマーの基底クラス
 class TimerBase
   def initialize(time:)
     @time = time
@@ -26,20 +26,23 @@ class TimerBase
   end
 end
 
+# ポモドーロクラス
 class Pomodoro < TimerBase
   def initialize(time: POMODORO_TIME)
     super
   end
 end
 
+# 休憩クラス
 class Break < TimerBase
   def initialize(type:)
-    @time = case type
-            when :long
-              LONG_BREAK_TIME
-            when :short
-              SHORT_BREAK_TIME
-            end
+    time = case type
+           when :long
+             LONG_BREAK_TIME
+           when :short
+             SHORT_BREAK_TIME
+           end
+    super(time: time)
   end
 end
 
