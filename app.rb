@@ -2,4 +2,4 @@
 
 require './timer/pomodoro_executer'
 
-PomodoroExecuter.call
+PomodoroExecuter.new.call
