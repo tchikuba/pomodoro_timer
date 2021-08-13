@@ -20,6 +20,7 @@ GEM
     rubocop-ast (1.9.1)
       parser (>= 3.0.1.1)
     ruby-progressbar (1.11.0)
+    timecop (0.9.4)
     unicode-display_width (2.0.0)
 
 PLATFORMS
@@ -27,6 +28,7 @@ PLATFORMS
 
 DEPENDENCIES
   rubocop
+  timecop
 
 BUNDLED WITH
    2.2.15
