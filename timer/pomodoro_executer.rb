@@ -5,10 +5,10 @@ require_relative './break'
 
 # ポモドーロサイクル実行クラス
 class PomodoroExecuter
-  POMODORO_TIME = 25
-  SHORT_BREAK_TIME = 5
-  LONG_BREAK_TIME = 15
-  SLEEP_TIME = ENV['DEBUG'].nil? ? 1 : 0.001
+  POMODORO_TIME = ENV['DEBUG'].nil? ? 25 : 1
+  SHORT_BREAK_TIME = ENV['DEBUG'].nil? ? 5 : 1
+  LONG_BREAK_TIME = ENV['DEBUG'].nil? ? 15 : 1
+  SLEEP_TIME = 1
 
   def initialize
     @pomodoro_count = 0

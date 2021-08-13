@@ -3,15 +3,16 @@
 # タイマーの基底クラス
 class TimerBase
   def initialize(time:)
-    @time = time
+    @start_time = Time.now
+    @end_time = @start_time + time * 60
   end
 
   def run
-    (@time - 1).downto(0) do |mi|
-      59.downto(0) do |s|
-        print "\r#{mi}:#{format('%02d', s)}"
-        sleep PomodoroExecuter::SLEEP_TIME
-      end
+    while Time.now < @end_time
+      sleep PomodoroExecuter::SLEEP_TIME
+      diff = @end_time.to_i - Time.now.to_i
+      minites = diff / 60
+      print "\r#{minites}:#{format('%02d', diff - minites * 60)}"
     end
     puts
   end
