@@ -3,6 +3,7 @@
 require 'bundler'
 Bundler.require
 
+# タイマークラス
 class TimerBase
   def initialize(minutes:)
     @end_time = Time.now + (minutes * 60)

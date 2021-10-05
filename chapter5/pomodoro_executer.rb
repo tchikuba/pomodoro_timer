@@ -4,6 +4,7 @@ require './pomodoro'
 require './short_break'
 require './long_break'
 
+# ポモドーロタイマークラス
 class PomodoroExecuter
   def initialize
     @pomodoro_count = 0

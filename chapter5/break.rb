@@ -2,6 +2,7 @@
 
 require './timer_base'
 
+# 休憩クラス
 class Break < TimerBase
   SHORT_MINUTES = 5
   LONG_MINUTES = 15
