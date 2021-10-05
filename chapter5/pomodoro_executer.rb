@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require './pomodoro'
 require './short_break'
 require './long_break'
@@ -15,7 +17,7 @@ class PomodoroExecuter
       pomodoro_cycle_with_logs
       long_break_with_logs
       @four_pomodoro_cycle_count += 1
-      puts "4ポモドーロセット#{((Pomodoro::MINUTES + Break::SHORT_MINUTES) * 4 + Break::LONG_MINUTES) * @four_pomodoro_cycle_count}分経過"
+      puts "4ポモドーロセット#{(((Pomodoro::MINUTES + Break::SHORT_MINUTES) * 4) + Break::LONG_MINUTES) * @four_pomodoro_cycle_count}分経過"
     end
   end
 
