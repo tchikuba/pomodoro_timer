@@ -6,6 +6,8 @@ require './long_break'
 
 # ポモドーロタイマークラス
 class PomodoroExecuter
+  ONE_CYCLE_MINUTES = ((Pomodoro::MINUTES + Break::SHORT_MINUTES) * 4) + Break::LONG_MINUTES
+
   def initialize
     @pomodoro_count = 0
     @short_break_count = 0
@@ -18,7 +20,7 @@ class PomodoroExecuter
       pomodoro_cycle_with_logs
       long_break_with_logs
       @four_pomodoro_cycle_count += 1
-      puts "4ポモドーロセット#{(((Pomodoro::MINUTES + Break::SHORT_MINUTES) * 4) + Break::LONG_MINUTES) * @four_pomodoro_cycle_count}分経過"
+      puts "4ポモドーロセット#{ONE_CYCLE_MINUTES * @four_pomodoro_cycle_count}分経過"
     end
   end
 
